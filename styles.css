@@ -1,0 +1,215 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #0d0d0d, #1a1a2e);
+    color: #ddd;
+    overflow-x: hidden;
+    transition: background 1s ease-in-out;
+}
+
+h1, h2, h3 {
+    color: #00d4ff;
+}
+
+a {
+    color: #00d4ff;
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #292b3f;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+header .header-content {
+    animation: fadeIn 2s ease-in-out;
+}
+
+header .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    animation: pulse 3s infinite;
+}
+
+/* Subtle Neon Text (for headings only) */
+.neon-text {
+    text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff, 0 0 20px #007acc;
+    animation: neonGlow 2s infinite alternate;
+}
+
+/* Remove glow from specific text */
+.no-glow {
+    text-shadow: none !important;
+    color: #ddd; /* Maintain regular text color */
+}
+
+/* Section Cards */
+.card {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: slideUp 1s ease-out;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: border 0.3s ease-in-out;
+}
+
+.card:hover {
+    border-color: #00d4ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    background: #1a1a2e;
+    animation: fadeIn 2s ease-in-out;
+}
+
+footer a {
+    color: #00d4ff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer a:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 5px #00d4ff, 0 0 15px #007acc, 0 0 25px #00d4ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #00d4ff, 0 0 10px #007acc;
+    }
+    to {
+        text-shadow: 0 0 10px #00d4ff, 0 0 20px #007acc;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #00d4ff;
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #00d4ff;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    header .profile-picture {
+        width: 120px;
+        height: 120px;
+    }
+
+    .card {
+        max-width: 90%;
+    }
+
+    footer a {
+        margin: 0 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    header .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    .card {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer a {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .profile-picture {
+        width: 80px;
+        height: 80px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .card {
+        padding: 10px;
+        margin: 15px 5px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer a {
+        margin: 0 3px;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+}
